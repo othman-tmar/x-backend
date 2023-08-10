@@ -26,6 +26,7 @@ const connect = async () => {
   mongoose.connection.on("disconnected", () => {
     console.log("mongoDB disconnected!");
   });
+  app.use(compression());
 
 //middlewares
 app.use(cors());
