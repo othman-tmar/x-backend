@@ -9,6 +9,7 @@ const productRouter =require("./routes/product.route")
 const categoryRouter =require("./routes/category.route")
 const subcategoryRouter =require("./routes/subcategory.route")
 const notificationRouter =require("./routes/notification.route")
+const compression = require('compression');
 const cors=require("cors")
 dotenv.config()
 const app = express();
@@ -26,7 +27,7 @@ const connect = async () => {
   mongoose.connection.on("disconnected", () => {
     console.log("mongoDB disconnected!");
   });
-  app.use(compression());
+app.use(compression()); 
 
 //middlewares
 app.use(cors());
